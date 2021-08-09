@@ -1,0 +1,20 @@
+<div class="todo-item" (click)="clickedOnTodo()" [class.completed]="todo.completed">
+    <div class="checkbox">
+      <i class="material-icons">check</i>
+  </div>
+  
+  <div class="todo-text">
+    {{ todo.text}}
+  </div>
+  
+  <div class="todo-box-control"  (click)="$event.stopPropagation()">
+    <div class="todo-button-control" appToolTip="Edit" (click)="clickedOnEdit()">
+      <i class="material-icons">edit</i>
+    </div>
+  
+    <div class="todo-button-control is-danger" appToolTip="Delete" (click)="clickedOnDelete()">
+      <i class="material-icons">delete</i>
+    </div>
+  </div>
+  </div>
+  

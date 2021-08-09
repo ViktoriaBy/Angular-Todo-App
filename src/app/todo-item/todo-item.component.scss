@@ -1,0 +1,109 @@
+.todo-item{
+    position: relative;
+display: flex;
+font-size: 20px;
+align-items: center;
+padding: 35px 15px;
+border-bottom: 3px dotted #F0F4C3 ;
+cursor: pointer;
+
+&.completed{
+    color: #aaa;
+}
+
+}
+
+.todo-item .checkbox{
+    margin-right: 20px;
+    flex-shrink: 0;
+    display:flex;
+  border: 2px solid #F5F5F5;
+  border-radius: 60%;
+
+  height: 25px;
+  width: 28px;
+
+  transition: background-color 0.2s, border-color 0.2s;
+  
+  
+
+   i.material-icons{
+       font-size: 20px;
+       margin: auto;
+
+       opacity: 0; //hide by default
+       color: #333;
+   }
+}
+
+.todo-item:hover .checkbox{
+    background-color: #F5F5F5;
+    i.material-icons{
+     opacity: 1;   
+    }
+
+}
+
+.todo-item.completed .checkbox{
+    background: #4CAF50;
+    border-color: #4CAF50;
+
+    i.material-icons{
+        opacity: 1;
+    }
+}
+
+.todo-item .todo-box-control{
+position: absolute;
+bottom: 0;
+right: 5px;
+display: flex;
+
+
+opacity: 0;
+visibility: hidden;
+transform: translateY(3px);
+
+transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+}
+
+.todo-item:hover .todo-box-control{
+opacity: 1;
+visibility: visible;
+transition-delay: 0.5s;
+transform: translateY(0);
+}
+
+.todo-box-control .todo-button-control{
+    background: #f5f7f8;
+    padding: 7px 10px;
+    display: flex;
+    
+
+    i.material-icons{
+        font-size: 20px;
+
+    }
+
+
+
+
+    &:active{
+        background: #e5e7e8;
+    }
+
+    &:hover{
+        background: #eee;
+    }
+
+    &:first-of-type{
+        border-top-left-radius: 7px;
+    }
+    &:last-of-type{
+        border-top-right-radius: 7px;
+    }
+}
+
+.todo-box-control .todo-button-control.is-danger:hover i.material-icons{
+color: red;
+}
